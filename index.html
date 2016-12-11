@@ -31,14 +31,14 @@
 
         <h3>
 <a id="related-work" class="anchor" href="#related-work" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Related Work</h3>
-        <p>Our motivation primarily comes from GitHub user Sacert's 'Colors of Film' analysis, in which he analyzed popular Hollywood films and extracted avereage frame colors. He used OpenCV and some built-in python libraries to generate his output, which
-            is an image with colors from each frame of the movie. Below is the output image for Harry Potter and the Prizoner of Azkaban:</p>
+        <p>Our motivation primarily comes from GitHub user Sacert's 'Colors of Film' analysis, in which he analyzed popular Hollywood films and extracted average frame colors. He used OpenCV and some built-in python libraries to generate his output, which
+            is an image with colors from each frame of the movie.</p>
 
         <h3>
 <a id="initial-questions" class="anchor" href="#initial-questions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initial Questions</h3>
         <p>When we began our analysis, the question we asked was, <i>"Can we accurately predict music genre by analyzing various aspects
   of a music video?"</i> This question was obviously extremely broad, and we quickly realized that we needed to narrow the scope and focus in on a few <b>important/relevant</b> features.</p>
-        <p>Thus, we revised our question to, "Can we accurately predict music genre by analyzing average frame color and youtube's video metadata (likes, dislikes, viewcount, etc.)?" This question was much more manageable, but was more geared towards a final
+        <p>Thus, we revised our question to, "Can we accurately predict music genre by analyzing average frame color and YouTube's video metadata (likes, dislikes, view count, etc.)?" This question was much more manageable, but was more geared towards a final
             product than the actual data science process.</p>
         <p>We then divided our project into two separate questions, with connected, but different goals. Firstly,
             <i>"What are the most defining/relevant features for a music video when it comes to genre?"</i>, and, <i>"Is it
@@ -51,7 +51,7 @@
         </p>
         <p>
           To try to learn more, we made binary classifiers for each genre. For example, the rock classifier would
-          take a video as input, and return either either true or false for 'is_rock'. These classifiers allowed
+          take a video as input, and return either true or false for 'is_rock'. These classifiers allowed
           us to see more individual features of our video genres. We found that when it comes to classifying for country music, everything looks like country. You'll  notice below that the country classifier incorrectly labels a large number (~300) of non-country videos as country.
           Where the rest of the videos suffer is that they have a hard time correctly identifying themselves as what they actually are. For example, any given input video will likely be classified as 'not EDM', even if it actually is EDM.
 
@@ -59,7 +59,7 @@
 
         <img src="false-pos.png"></img>
       <p>
-        Lastly, we used scikit-learn to find the most important features of our classifiers, as shown below. We noticed that pop classification seems to place heavy emphasis on the likes and viewcount feautres. Aside from a small increase in importance of viewcount over all genres, none of the features, be they metadata or color data, seem to be particularly more important than others. This could mean that frame color data and view/like data is not the right information for classifying genre.
+        Lastly, we used scikit-learn to find the most important features of our classifiers, as shown below. We noticed that pop classification seems to place heavy emphasis on the likes and view count features. Aside from a small increase in importance of view count over all genres, none of the features, be they metadata or color data, seem to be particularly more important than others. This could mean that frame color data and view/like data is not the right information for classifying genre.
 
       </p>
       <img src="features.png"></img>
