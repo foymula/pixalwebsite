@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>Pixal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,71 +9,87 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
+</head>
+
+<body>
     <section class="page-header">
-      <h1 class="project-name">Pixal</h1>
-      <h2 class="project-tagline"></h2>
-      <a href="https://github.com/cdpetty/Pixal" class="btn">View on GitHub</a>
-      <a href="https://www.youtube.com/watch?v=NQEu_sVvOv8" class="btn">Project Video</a>
-      <a href="https://foymula.github.io/pixalwebsite/jupyter.html" class="btn">Jupyter Notebook</a>
-      <a href="https://foymula.github.io/pixalwebsite/data.html" class="btn">Data</a>
+        <h1 class="project-name">Pixal</h1>
+        <h2 class="project-tagline"></h2>
+        <a href="https://github.com/cdpetty/Pixal" class="btn">View on GitHub</a>
+        <a href="https://www.youtube.com/watch?v=NQEu_sVvOv8" class="btn">Project Video</a>
+        <a href="https://foymula.github.io/pixalwebsite/jupyter.html" class="btn">Jupyter Notebook</a>
+        <a href="https://foymula.github.io/pixalwebsite/data.html" class="btn">Data</a>
     </section>
 
     <section class="main-content">
-<h3>
-<a id="overview-and-motivation" class="anchor" href="#overview-and-motivation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview and Motivation</h3>
-<p>Our team wanted to find out if it was possible to intelligently determine the genre of a video by its YouTube metadata
-  (likes, dislikes, view count, etc.) and its average frame colors throughout the video.</p>      
-<p>After thorough analysis, Pixal emerged: a web interface that takes a YouTube URL as input, and outputs a predicted genre and an average-color-per-frame image. This is done using 
-  a combination of OpenCV color analysis and scikit-learn machine learning, and makes intelligent assumptions 
-  on our data to output a substantially accurate genre classification for the input video.</p>
-      
-<h3>
+        <h3>
+<a id="overview-and-motivation" class="anchor" href="#overview-and-motivation" aria-hidden="true">
+  <span aria-hidden="true" class="octicon octicon-link"></span></a>Overview and Motivation</h3>
+        <p>Our team wanted to find out if it was possible to intelligently determine the genre of a video by its YouTube metadata (likes, dislikes, view count, etc.) and its average frame colors throughout the video.</p>
+        <p>After thorough analysis, Pixal emerged: a web interface that takes a YouTube URL as input, and outputs a predicted genre and an average-color-per-frame image. This is done using a combination of OpenCV color analysis and scikit-learn machine learning,
+            and makes intelligent assumptions on our data to output a substantially accurate genre classification for the input video.</p>
+
+        <h3>
 <a id="related-work" class="anchor" href="#related-work" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Related Work</h3>
-<p>Our motivation primarily comes from GitHub user Sacert's 'Colors of Film' analysis, in which he analyzed popular
-  Hollywood films and extracted avereage frame colors. He used OpenCV and some built-in python libraries to generate his output, 
-  which is an image with colors from each frame of the movie. Below is the output image for Harry Potter and the Prizoner of Azkaban:</p>
+        <p>Our motivation primarily comes from GitHub user Sacert's 'Colors of Film' analysis, in which he analyzed popular Hollywood films and extracted avereage frame colors. He used OpenCV and some built-in python libraries to generate his output, which
+            is an image with colors from each frame of the movie. Below is the output image for Harry Potter and the Prizoner of Azkaban:</p>
 
-<h3>
+        <h3>
 <a id="initial-questions" class="anchor" href="#initial-questions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initial Questions</h3>
-<p>When we began our analysis, the question we asked was, <i>"Can we accurately predict music genre by analyzing various aspects 
-  of a music video?"</i> This question was obviously extremely broad, and we quickly realized that we needed to narrow 
-  the scope and focus in on a few <b>important/relevant</b> features.</p>
-<p>Thus, we revised our question to, "Can we accurately predict music genre by analyzing average frame color
-  and youtube's video metadata (likes, dislikes, viewcount, etc.)?" This question was much more manageable, but 
-  was more geared towards a final product than the actual data science process.</p>      
-<p>We then divided our project into two separate questions, with connected, but different goals. Firstly, 
-  <i>"What are the most defining/relevant features for a music video when it comes to genre?"</i>, and, <i>"Is it 
-  possible to leverage these features to accurately predict the genre of a music video?"</i> These are the two questions 
-  that our project really sought to answer.</p>
+        <p>When we began our analysis, the question we asked was, <i>"Can we accurately predict music genre by analyzing various aspects
+  of a music video?"</i> This question was obviously extremely broad, and we quickly realized that we needed to narrow the scope and focus in on a few <b>important/relevant</b> features.</p>
+        <p>Thus, we revised our question to, "Can we accurately predict music genre by analyzing average frame color and youtube's video metadata (likes, dislikes, viewcount, etc.)?" This question was much more manageable, but was more geared towards a final
+            product than the actual data science process.</p>
+        <p>We then divided our project into two separate questions, with connected, but different goals. Firstly,
+            <i>"What are the most defining/relevant features for a music video when it comes to genre?"</i>, and, <i>"Is it
+  possible to leverage these features to accurately predict the genre of a music video?"</i> These are the two questions that our project really sought to answer.</p>
 
-<h3>
+        <h3>
+  <a id="initial-questions" class="anchor" href="#initial-questions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Analysis</h3>
+        </p>
+        We created a random forest classifier based on only the metadata features (view count, likes, dislikes, etc.) and one based off of only the color data. After training and testing them, we found that the one with only metadata yielded a score of .43, while the one with only color data gave a score of .21. We combined the two feature sets to make one classifier with all of the features. This gave us an average score of .4.
+        </p>
+        <p>
+          To try to learn more, we made binary classifiers for each genre. For example, the rock classifier would
+          take a video as input, and return either either true or false for 'is_rock'. These classifiers allowed
+          us to see more individual features of our video genres. We found that when it comes to classifying for country music, everything looks like country. You'll  notice below that the country classifier incorrectly labels a large number (~300) of non-country videos as country.
+          Where the rest of the videos suffer is that they have a hard time correctly identifying themselves as what they actually are. For example, any given input video will likely be classified as 'not EDM', even if it actually is EDM.
+
+        </p>
+
+        <img src="false-pos.png"></img>
+      <p>
+        Lastly, we used scikit-learn to find the most important features of our classifiers, as shown below. We noticed that pop classification seems to place heavy emphasis on the likes and viewcount feautres. Aside from a small increase in importance of viewcount over all genres, none of the features, be they metadata or color data, seem to be particularly more important than others. This could mean that frame color data and view/like data is not the right information for classifying genre.
+
+      </p>
+      <img src="features.png"></img>
+        <h3>
 <a id="takeaways" class="anchor" href="#takeaways" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Takeaways</h3>
-<ol>
-  <li>When looking at individual feature data, we notice that the genre classifiers seem to either classify everything 
-    as that particular genre, or nothing as that particular genre. This seems to indicate that none of the genres are very
-    distinct from the others.</li>
-  <li>As a result of this, we see a high number of false positives or false negatives in all of our predictions.</li>
-  <li>No particular feature seems to be extremely important when classifying genres, which could indicate that no feature is particularly useful. We would normally expect that some features stick out as the most useful or indicative of a genre. Because we do not see this, it could mean that all of the features are not particularly useful.</li>
-</ol>
-  <p>Even though we did not create a strong classifier, we still count our project as successful. We learned that despite the differences in the sounds of music, the quantifiable traits (color data, metadata) that we examined are very similar.</p>
-      
-<h3>
-<a id="future-improvements" class="anchor" href="#future-improvements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Future Improvements</h3>
-<p>Since we do know there are differences between genres, we could search further into data to try to find them. We would consider the following ideas in future exploration.</p>
-<ul>
-  <li>Use audio data. This could include average pitch frequency, musical key, chord progressions used, presence of consonance/dissonance, and more</li>
-  <li>Examine lyrics and song title, using something like LDA or Watson's tonal analysis</li>
-  <li>Expand our test and train sets</li>
-</ul>
+        <ol>
+            <li>When looking at individual feature data, we notice that the genre classifiers seem to either classify everything as that particular genre, or nothing as that particular genre. This seems to indicate that none of the genres are very distinct
+                from the others.</li>
+            <li>As a result of this, we see a high number of false positives or false negatives in all of our predictions.</li>
+            <li>No particular feature seems to be extremely important when classifying genres, which could indicate that no feature is particularly useful. We would normally expect that some features stick out as the most useful or indicative of a genre.
+                Because we do not see this, it could mean that all of the features are not particularly useful.</li>
+        </ol>
+        <p>Even though we did not create a strong classifier, we still count our project as successful. We learned that despite the differences in the sounds of music, the quantifiable traits (color data, metadata) that we examined are very similar.</p>
 
-      <footer class="site-footer">
-        <span class="site-footer-credits"><a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a></span>
-      </footer>
+        <h3>
+<a id="future-improvements" class="anchor" href="#future-improvements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Future Improvements</h3>
+        <p>Since we do know there are differences between genres, we could search further into data to try to find them. We would consider the following ideas in future exploration.</p>
+        <ul>
+            <li>Use audio data. This could include average pitch frequency, musical key, chord progressions used, presence of consonance/dissonance, and more</li>
+            <li>Examine lyrics and song title, using something like LDA or Watson's tonal analysis</li>
+            <li>Expand our test and train sets</li>
+        </ul>
+
+        <footer class="site-footer">
+            <span class="site-footer-credits"><a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a></span>
+        </footer>
 
     </section>
 
-  
-  </body>
+
+</body>
+
 </html>
