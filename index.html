@@ -22,23 +22,37 @@
     <section class="main-content">
 <h3>
 <a id="overview-and-motivation" class="anchor" href="#overview-and-motivation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview and Motivation</h3>
-<p>Our team wanted to find out if it was possible to intelligently determine the genre of a video by its youtube metadata (likes, dislikes, view count, etc.) and its average frame colors throughout the video.</p>      
-<p>After thorough analysis, Pixal emerged: a web interface that takes a YouTube URL as input, and outputs a genre classifier and an average-color-per-frame image. This is done using a combination of OpenCV color analysis and scikit-learn machine learning, and makes intelligent assumptions on our data to output a substantially accurate genre classification for the input video.</p>
+<p>Our team wanted to find out if it was possible to intelligently determine the genre of a video by its YouTube metadata
+  (likes, dislikes, view count, etc.) and its average frame colors throughout the video.</p>      
+<p>After thorough analysis, Pixal emerged: a web interface that takes a YouTube URL as input, and outputs a predicted genre and an average-color-per-frame image. This is done using 
+  a combination of OpenCV color analysis and scikit-learn machine learning, and makes intelligent assumptions 
+  on our data to output a substantially accurate genre classification for the input video.</p>
       
 <h3>
 <a id="related-work" class="anchor" href="#related-work" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Related Work</h3>
-<p>Our motivation primarily comes from GitHub user Sacert's 'Colors of Film' analysis, in which he analyzed popular Hollywood films and extracted avereage frame colors. He used OpenCV and some built-in python libraries to generate his output, which is an image with colors from each frame of the movie. Below is the output image for Harry Potter and the Prizoner of Azkaban:</p>
+<p>Our motivation primarily comes from GitHub user Sacert's 'Colors of Film' analysis, in which he analyzed popular
+  Hollywood films and extracted avereage frame colors. He used OpenCV and some built-in python libraries to generate his output, 
+  which is an image with colors from each frame of the movie. Below is the output image for Harry Potter and the Prizoner of Azkaban:</p>
 
 <h3>
 <a id="initial-questions" class="anchor" href="#initial-questions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initial Questions</h3>
-<p>When we began our analysis, the question we asked was, <i>"Can we accurately predict music genre by analyzing various aspects of a music video"</i>. This question was obviously extremely broad, and we quickly realized that we needed to narrow the scope and focus in on a few <b>important/relevant</b> features.</p>
-<p>Thus, we revised our question to, "Can we accurately predict music genre by analyzing average frame color and youtube's video metadata (likes, dislikes, viewcount, etc.)". This question was much more manageable, but was more geared towards a final product than the actual data science process.</p>      
-<p>We then divided our project into two separate questions, with connected, but different goals. Firstly, <i>"What are the most defining/relevant features for a music video when it comes to genre"</i>, and, <i>"Is it possible to leverage these features to accurately predict the genre of a music video"</i>. These are the two questions that our project really sought to answer.</p>
+<p>When we began our analysis, the question we asked was, <i>"Can we accurately predict music genre by analyzing various aspects 
+  of a music video?"</i> This question was obviously extremely broad, and we quickly realized that we needed to narrow 
+  the scope and focus in on a few <b>important/relevant</b> features.</p>
+<p>Thus, we revised our question to, "Can we accurately predict music genre by analyzing average frame color
+  and youtube's video metadata (likes, dislikes, viewcount, etc.)?" This question was much more manageable, but 
+  was more geared towards a final product than the actual data science process.</p>      
+<p>We then divided our project into two separate questions, with connected, but different goals. Firstly, 
+  <i>"What are the most defining/relevant features for a music video when it comes to genre?"</i>, and, <i>"Is it 
+  possible to leverage these features to accurately predict the genre of a music video?"</i> These are the two questions 
+  that our project really sought to answer.</p>
 
 <h3>
 <a id="takeaways" class="anchor" href="#takeaways" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Takeaways</h3>
 <ol>
-  <li>When looking at individual feature data, we notice that the genre classifiers seem to either classify everything as that particular genre, or nothing as that particular genre. This seems to indicate that none of the genres are very distinct from the others.</li>
+  <li>When looking at individual feature data, we notice that the genre classifiers seem to either classify everything 
+    as that particular genre, or nothing as that particular genre. This seems to indicate that none of the genres are very
+    distinct from the others.</li>
   <li>As a result of this, we see a high number of false positives or false negatives in all of our predictions.</li>
   <li>No particular feature seems to be extremely important when classifying genres, which could indicate that no feature is particularly useful. We would normally expect that some features stick out as the most useful or indicative of a genre. Because we do not see this, it could mean that all of the features are not particularly useful.</li>
 </ol>
