@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Pixal by foymula</title>
+    <title>Pixal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -21,15 +21,17 @@
     <section class="main-content">
 <h3>
 <a id="overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h3>
-
 <p>Pixal is a web interface that takes a YouTube URL as input, and outputs a genre classifier and an average-color-per-frame image. This is done using a combination of OpenCV color analysis and scikit-learn machine learning, and makes intelligent assumptions on our data to output a substantially accurate genre classification for the input video.</p>
       
 <h3>
 <a id="related-work" class="anchor" href="#related-work" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Related Work</h3>
+<p>Our motivation primarily comes from GitHub user Sacert's 'Colors of Film' analysis, in which he analyzed popular Hollywood films and extracted avereage frame colors. He used OpenCV and some built-in python libraries to generate his output, which is an image with colors from each frame of the movie. Below is the output image for Harry Potter and the Prizoner of Azkaban:</p>
 
-      <p>Our motivation primarily comes from GitHub user Sacert's 'Colors of Film' analysis, in which he analyzed popular Hollywood films and extracted avereage frame colors. He used OpenCV and some built-in python libraries to generate his output, which is an image with colors from each frame of the movie. Below is the output image for Harry Potter and the Prizoner of Azkaban:
-</p>
+<h3>
+<a id="initial-questions" class="anchor" href="#initial-questions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initial Questions</h3>
+<p>Our project sought to answer the questions <i>"What are the most defining/relevant features for a music video when it comes to genre"</i>, and, <i>"Is it possible to leverage these features to accurately predict the genre of a music video"</i>.   </p>
       
+    
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/foymula/pixalwebsite">Pixal</a> is maintained by <a href="https://github.com/foymula">foymula</a>.</span>
 
